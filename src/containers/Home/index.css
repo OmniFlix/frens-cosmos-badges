@@ -102,6 +102,36 @@
     margin: 10px 0 0;
 }
 
+.home .cards_section.section2 .card .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 20px 10px 20px;
+}
+
+.home .cards_section.section2 .card .actions .claim {
+    background: #1E1E1E 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    opacity: 1;
+    text-align: center;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 60px;
+}
+
+.home .cards_section.section2 .card .actions .purchase {
+    text-align: center;
+    letter-spacing: 0;
+    color: #8E8E8E;
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
 /* Future Group */
 .home .future_group {
     display: flex;

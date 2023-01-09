@@ -1,26 +1,36 @@
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React from 'react';
+import { Button } from '@mui/material';
+import variables from '../../utils/variables';
 
-const Section2 = () => {
+const Section2 = (props) => {
     return (
         <div className="cards_section section2">
             <div className="card">
                 <div className="img_section">
 
                 </div>
-                <div className="details">
-                    <h2>nft title</h2>
-                    <p>Criteria criteria criteria criteria criteria criteria</p>
+                <div className="details actions">
+                    <Button className="claim">
+                        {variables[props.lang].claim}
+                    </Button>
+                    <Button className="purchase">
+                        {variables[props.lang].purchase}
+                    </Button>
                 </div>
             </div>
             <div className="card">
                 <div className="img_section">
 
                 </div>
-                <div className="details">
-                    <h2>nft title</h2>
-                    <p>Criteria criteria criteria criteria criteria criteria</p>
+                <div className="details actions">
+                    <Button className="claim">
+                        {variables[props.lang].claim}
+                    </Button>
+                    <Button className="purchase">
+                        {variables[props.lang].purchase}
+                    </Button>
                 </div>
             </div>
         </div>
