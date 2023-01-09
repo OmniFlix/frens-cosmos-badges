@@ -1,11 +1,11 @@
 import React from 'react';
 import Router from './Router';
-import './App.css';
+import './app.css';
 import Snackbar from './containers/Snackbar';
 
 function App () {
     return (
-        <div className="App">
+        <div className="app">
             <Router/>
             <Snackbar/>
         </div>
