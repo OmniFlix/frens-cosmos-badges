@@ -23,9 +23,9 @@ jobs:
       - name: login to remote instance and build app
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.INSYNC_DEV_SSH_SERVER }}
-          username: ${{ secrets.INSYNC_DEV_SSH_USER }}
-          key: ${{ secrets.INSYNC_DEV_SSH_KEY }}
+          host: ${{ secrets.DEV_SSH_SERVER }}
+          username: ${{ secrets.DEV_SSH_USER }}
+          key: ${{ secrets.DEV_SSH_KEY }}
           port: ${{ secrets.PORT }}
           envs: GITHUB_REPOSITORY,DEPLOY_DIR
           script: |
