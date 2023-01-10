@@ -10,9 +10,7 @@ const Section2 = (props) => {
         <div className="cards_section section2">
             <div className="card">
                 <div className="img_section">
-                    <img
-                        alt=""
-                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/7750c3eb-941a-4991-184b-e7d59db56900/medium" />
+
                 </div>
                 <div className="details actions">
                     <Button className="claim">
@@ -25,9 +23,7 @@ const Section2 = (props) => {
             </div>
             <div className="card">
                 <div className="img_section">
-                    <img
-                        alt=""
-                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/fc869eb6-ec99-448c-746d-82999590eb00/medium" />
+
                 </div>
                 <div className="details actions">
                     <Button className="claim" onClick={props.showTradeDialog}>
