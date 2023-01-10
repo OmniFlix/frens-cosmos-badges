@@ -44,6 +44,38 @@
 .home .section1 {
     justify-content: flex-end;
     margin-bottom: 50px;
+    position: relative;
+}
+
+.home .section1 .rhombus {
+    position: absolute;
+    right: 40px;
+    bottom: 132px;
+}
+
+.home .section1 .rhombus > img {
+    width: 100px;
+    height: 100px;
+}
+
+.home .section1 .rhombus > p {
+    text-align: center;
+    letter-spacing: 0;
+    color: #FFDB00;
+    opacity: 1;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 26px;
+    bottom: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home .section2 {
@@ -58,8 +90,9 @@
 .home .cards_section .card {
     padding: 20px;
     border: 1px solid #FFFFFF;
-    width: 350px;
+    width: 400px;
     border-radius: 25px;
+    position: relative;
 }
 
 .home .cards_section .card:last-child {
@@ -67,16 +100,22 @@
 }
 
 .home .cards_section .card .img_section {
-    height: 350px;
-    border: 4px solid #FFFFFF;
+    height: 400px;
+    border: 2px solid #FFFFFF;
     border-radius: 16px;
     opacity: 1;
     margin-bottom: 20px;
 }
 
+.home .cards_section .card .img_section img {
+    width: -webkit-fill-available;
+    border-radius: 16px;
+    height: inherit;
+}
+
 .home .cards_section .card .details {
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 4px solid #FFFFFF;
+    border: 2px solid #FFFFFF;
     border-radius: 16px;
     opacity: 1;
     padding: 10px 20px;
@@ -84,12 +123,15 @@
 
 .home .cards_section .card .details h2 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     text-align: left;
     letter-spacing: 0;
     color: #1E1E1E;
     opacity: 1;
-    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 -1px 0 0;
 }
 
 .home .cards_section .card .details p {
@@ -100,6 +142,12 @@
     color: #8E8E8E;
     opacity: 1;
     margin: 10px 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 76px;
 }
 
 .home .cards_section.section2 .card .actions {

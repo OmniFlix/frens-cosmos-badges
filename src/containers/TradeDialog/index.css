@@ -1,0 +1,102 @@
+.trade_dialog > div:nth-child(3) > div {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0 0 10px #0000004D;
+    border-radius: 16px;
+    opacity: 1;
+    width: 800px;
+    min-width: 800px;
+    height: 500px;
+}
+
+.trade_dialog .trade_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: inherit;
+}
+
+.trade_dialog .trade_content .left_section {
+    width: 55%;
+}
+
+.trade_dialog .trade_content .right_section {
+    position: relative;
+    flex: 1;
+    height: inherit;
+}
+
+.trade_dialog .trade_content .right_section .cross_button {
+    background: unset;
+    position: absolute;
+    right: 0;
+}
+
+.trade_dialog .trade_content .right_section .cross_button svg {
+    width: 20px;
+}
+
+.trade_dialog .trade_content .right_section > h2 {
+    text-align: left;
+    letter-spacing: 0;
+    color: #1E1E1E;
+    opacity: 1;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 44px;
+    margin-bottom: 0;
+}
+
+.trade_dialog .trade_content .right_section > p {
+    text-align: left;
+    letter-spacing: 0;
+    color: #1E1E1E;
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.trade_dialog .trade_content .right_section > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+
+.trade_dialog .trade_content .right_section > div button {
+    background: #8E8E8E 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding: 2px 20px;
+    margin-right: 10px;
+}
+
+.trade_dialog .trade_content .right_section .content {
+    text-align: left;
+    letter-spacing: 0;
+    color: #8E8E8E;
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+.trade_dialog .trade_content .right_section .trade_button {
+    background: #1E1E1E 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 50px;
+    position: absolute;
+    bottom: 60px;
+}
