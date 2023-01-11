@@ -223,8 +223,8 @@
     position: relative;
 }
 
-.home .footer > svg {
-    width: 32px;
+.home .footer > img {
+    width: 91px
 }
 
 .home .footer .copy_right {
