@@ -11,7 +11,7 @@ const Section2 = (props) => {
         <div className="cards_section section2">
             <div className="card">
                 <div className="img_section">
-                    <HandIcon />
+                    <HandIcon/>
                 </div>
                 <div className="details actions">
                     <Button className="claim">
@@ -24,7 +24,7 @@ const Section2 = (props) => {
             </div>
             <div className="card">
                 <div className="img_section">
-                    <HandIcon />
+                    <HandIcon/>
                 </div>
                 <div className="details actions">
                     <Button className="claim" onClick={props.showTradeDialog}>

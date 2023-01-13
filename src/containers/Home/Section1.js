@@ -10,29 +10,29 @@ const Section1 = () => {
                 <div className="img_section">
                     <img
                         alt=""
-                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/7750c3eb-941a-4991-184b-e7d59db56900/medium" />
+                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/7750c3eb-941a-4991-184b-e7d59db56900/medium"/>
                 </div>
                 <div className="rhombus">
-                    <img alt="rhombus" src={rhombusIcon} />
+                    <img alt="rhombus" src={rhombusIcon}/>
                     <p>1</p>
                 </div>
                 <div className="details">
-                    <h2 title="Frens Cheesecake (🍰,🤝)">Frens Cheesecake (🍰,🤝)</h2>
-                    <p title="Thank you for staking with us 🤝">Thank you for staking with us 🤝</p>
+                    <h2 title="Frens Cheesecake (🍰,🤝)">Frens Cheesecake <span aria-label="cheesecake" role="img">(🍰,🤝)</span></h2>
+                    <p title="Thank you for staking with us 🤝">Thank you for staking with us <span aria-label="staking" role="img">🤝</span></p>
                 </div>
             </div>
             <div className="card">
                 <div className="img_section">
                     <img
                         alt=""
-                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/fc869eb6-ec99-448c-746d-82999590eb00/medium" />
+                        src="https://imagedelivery.net/-N7cPU9vJaN2bV17tdfWHA/fc869eb6-ec99-448c-746d-82999590eb00/medium"/>
                 </div>
                 <div className="rhombus">
-                    <img alt="rhombus" src={rhombusIcon} />
+                    <img alt="rhombus" src={rhombusIcon}/>
                     <p>3</p>
                 </div>
                 <div className="details">
-                    <h2 title="Bear Market Frens (🧸,🤝)">Bear Market Frens (🧸,🤝)</h2>
+                    <h2 title="Bear Market Frens (🧸,🤝)">Bear Market Frens <span aria-label="Bear" role="img">(🧸,🤝)</span></h2>
                     <p title="We are all bear market frens">We are all bear market frens</p>
                 </div>
             </div>
