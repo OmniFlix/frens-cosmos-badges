@@ -105,12 +105,19 @@
     border-radius: 16px;
     opacity: 1;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home .cards_section .card .img_section img {
     width: -webkit-fill-available;
     border-radius: 16px;
     height: inherit;
+}
+
+.home .cards_section.section2 .card .img_section svg {
+    width: 120px;
 }
 
 .home .cards_section .card .details {
