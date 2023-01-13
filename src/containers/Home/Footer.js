@@ -10,11 +10,11 @@ import { ReactComponent as Instagram } from '../../assets/social/insta.svg';
 const Footer = (props) => {
     return (
         <div className="footer">
-            <img alt="frens" src={Logo} />
+            <img alt="frens" src={Logo}/>
             <div className="social_icons">
-                <Twitter />
-                <Discord />
-                <Instagram />
+                <Twitter/>
+                <Discord/>
+                <Instagram/>
             </div>
             <div className="copy_right">
                 {variables[props.lang].copy_right_content}
