@@ -99,7 +99,7 @@
     border-radius: 25px;
     position: relative;
     box-shadow: 0 0 20px #00000070;
-    backdrop-filter: blur(2px);
+    background: #ffffff26;
 }
 
 .home .cards_section .card:last-child {
