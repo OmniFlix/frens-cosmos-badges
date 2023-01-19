@@ -3,17 +3,14 @@ import './index.css';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/nav_logo.svg';
-import { Button } from '@mui/material';
-import variables from '../../utils/variables';
+import KeplrButton from './KeplrButton';
 
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <div className="navbar">
-            <Logo />
+            <Logo/>
             <div className="nav_actions">
-                <Button>
-                    {variables[props.lang].connect}
-                </Button>
+                <KeplrButton/>
             </div>
         </div>
     );

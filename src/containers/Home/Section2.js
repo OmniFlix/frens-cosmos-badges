@@ -4,13 +4,14 @@ import React from 'react';
 import { Button } from '@mui/material';
 import variables from '../../utils/variables';
 import { showTradeDialog } from '../../actions/home';
+import { ReactComponent as HandIcon } from '../../assets/hand.svg';
 
 const Section2 = (props) => {
     return (
         <div className="cards_section section2">
             <div className="card">
                 <div className="img_section">
-
+                    <HandIcon/>
                 </div>
                 <div className="details actions">
                     <Button className="claim">
@@ -23,7 +24,7 @@ const Section2 = (props) => {
             </div>
             <div className="card">
                 <div className="img_section">
-
+                    <HandIcon/>
                 </div>
                 <div className="details actions">
                     <Button className="claim" onClick={props.showTradeDialog}>

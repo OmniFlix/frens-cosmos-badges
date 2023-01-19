@@ -19,7 +19,7 @@ const TradeDialog = (props) => {
                 <div className="left_section"></div>
                 <div className="right_section">
                     <Button className="cross_button" onClick={props.handleClose}>
-                        <Icon className="cross" icon="cross" />
+                        <Icon className="cross" icon="cross"/>
                     </Button>
                     <h2>
                         bear market
