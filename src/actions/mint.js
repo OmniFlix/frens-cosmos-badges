@@ -3,6 +3,7 @@ import Axios from 'axios';
 import {
     MINT_NFT_ERROR,
     MINT_NFT_IN_PROGRESS,
+    MINT_NFT_IN_PROGRESS_SET,
     MINT_NFT_SUCCESS,
     MINT_QUEUE_FETCH_ERROR,
     MINT_QUEUE_FETCH_IN_PROGRESS,
@@ -10,14 +11,17 @@ import {
     MINT_REQUEST_FETCH_ERROR,
     MINT_REQUEST_FETCH_IN_PROGRESS,
     MINT_REQUEST_FETCH_SUCCESS,
-    PROJECTS_LIST_FETCH_ERROR,
-    PROJECTS_LIST_FETCH_IN_PROGRESS,
-    PROJECTS_LIST_FETCH_SUCCESS,
+    NFT_CLAIM_STATUS_CHECK_ERROR,
+    NFT_CLAIM_STATUS_CHECK_IN_PROGRESS,
+    NFT_CLAIM_STATUS_CHECK_SUCCESS,
     NFT_FETCH_ERROR,
     NFT_FETCH_IN_PROGRESS,
     NFT_FETCH_SUCCESS,
+    PROJECTS_LIST_FETCH_ERROR,
+    PROJECTS_LIST_FETCH_IN_PROGRESS,
+    PROJECTS_LIST_FETCH_SUCCESS,
 } from '../constants/mint';
-import { urlNFT } from '../constants/restURL';
+import { urlCheckNFTClaim, urlNFT } from '../constants/restURL';
 
 const fetchProjectsListInProgress = () => {
     return {
@@ -266,4 +270,52 @@ export const fetchNFT = (nftID) => (dispatch) => {
                     : 'Failed!',
             ));
         });
+};
+
+export const setMintNFTInProgress = (value) => {
+    return {
+        type: MINT_NFT_IN_PROGRESS_SET,
+        value,
+    };
+};
+
+const checkNFTClaimStatusInProgress = () => {
+    return {
+        type: NFT_CLAIM_STATUS_CHECK_IN_PROGRESS,
+    };
+};
+
+export const checkNFTClaimStatusSuccess = (value) => {
+    return {
+        type: NFT_CLAIM_STATUS_CHECK_SUCCESS,
+        value,
+    };
+};
+
+const checkNFTClaimStatusError = (message) => {
+    return {
+        type: NFT_CLAIM_STATUS_CHECK_ERROR,
+        message,
+    };
+};
+
+export const checkNFTClaimStatus = (denom, address) => (dispatch) => {
+    dispatch(checkNFTClaimStatusInProgress());
+
+    const url = urlCheckNFTClaim(denom, address);
+    Axios.get(url, {
+        headers: {
+            Accept: 'application/json, text/plain, */*',
+        },
+    }).then((res) => {
+        dispatch(checkNFTClaimStatusSuccess(res.data && res.data.result && res.data.result.list));
+    }).catch((error) => {
+        dispatch(checkNFTClaimStatusError(
+            error.response &&
+            error.response.data &&
+            error.response.data.message
+                ? error.response.data.message
+                : 'Failed!',
+        ));
+    });
 };

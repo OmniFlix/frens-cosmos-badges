@@ -4,18 +4,17 @@ import React from 'react';
 import { Button } from '@mui/material';
 import variables from '../../utils/variables';
 import { showTradeDialog } from '../../actions/home';
-import { ReactComponent as HandIcon } from '../../assets/hand.svg';
 import { showMessage } from '../../actions/snackbar';
 
 const Section2 = (props) => {
-    const handleShow = () => {
+    const handleShow = (value) => {
         if (!props.address) {
             props.showMessage('Connect Account');
 
             return;
         }
 
-        props.showTradeDialog();
+        props.showTradeDialog(value);
     };
 
     const list = props.list && props.list.length > 2
@@ -25,19 +24,33 @@ const Section2 = (props) => {
         <div className="cards_section section2">
             {list && list.length
                 ? list.map((val, index) => {
+                    const preview = val.nft_meta && val.nft_meta.preview_uri;
                     return (
                         <div key={index} className="card">
                             <div className="img_section">
-                                <HandIcon/>
+                                <img
+                                    alt=""
+                                    src={preview}/>
                             </div>
-                            <div className="details actions">
-                                <Button className="claim" onClick={handleShow}>
-                                    {variables[props.lang].claim}
-                                </Button>
-                                <Button disabled className="purchase">
-                                    {variables[props.lang].purchase}
-                                </Button>
-                            </div>
+                            {props.claimStatusInProgress
+                                ? null
+                                : props.claimStatus && props.claimStatus.length
+                                    ? <div className="details">
+                                        <h2 title={val.nft_meta && val.nft_meta.name}>
+                                            {val.nft_meta && val.nft_meta.name}
+                                        </h2>
+                                        <p title={val.nft_meta && val.nft_meta.description}>
+                                            {val.nft_meta && val.nft_meta.description}
+                                        </p>
+                                    </div>
+                                    : <div className="details actions">
+                                        <Button className="claim" onClick={() => handleShow(val)}>
+                                            {variables[props.lang].claim}
+                                        </Button>
+                                        <Button disabled className="purchase">
+                                            {variables[props.lang].purchase}
+                                        </Button>
+                                    </div>}
                         </div>
                     );
                 }) : null}
@@ -47,6 +60,8 @@ const Section2 = (props) => {
 
 Section2.propTypes = {
     address: PropTypes.string.isRequired,
+    claimStatus: PropTypes.array.isRequired,
+    claimStatusInProgress: PropTypes.bool.isRequired,
     lang: PropTypes.string.isRequired,
     list: PropTypes.array.isRequired,
     showMessage: PropTypes.func.isRequired,
@@ -58,6 +73,8 @@ const stateToProps = (state) => {
         address: state.account.wallet.connection.address,
         lang: state.language,
         list: state.mint.projectsList.value,
+        claimStatus: state.mint.claimStatus.value,
+        claimStatusInProgress: state.mint.claimStatus.inProgress,
     };
 };
 

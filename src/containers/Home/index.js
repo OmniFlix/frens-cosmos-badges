@@ -10,7 +10,7 @@ import TradeDialog from '../TradeDialog';
 import { ReactComponent as BackgroundIcon } from '../../assets/cards_bg.svg';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchProjectsList, fetchNFT } from '../../actions/mint';
+import { checkNFTClaimStatus, fetchProjectsList } from '../../actions/mint';
 import { showMessage } from '../../actions/snackbar';
 
 class Home extends Component {
@@ -18,14 +18,8 @@ class Home extends Component {
         if (this.props.list && !this.props.list.length) {
             if (this.props.address) {
                 this.props.fetchProjectsList(this.props.address, (result) => {
-                    if (result && result.length) {
-                        result.map((value) => {
-                            if (value && value.nfts && value.nfts.length && value.nfts[0]) {
-                                this.props.fetchNFT(value.nfts[0]);
-                            }
-
-                            return null;
-                        });
+                    if (this.props.address && result && result.length && result[0].denom && result[0].denom.id) {
+                        this.props.checkNFTClaimStatus(result[0].denom.id, this.props.address);
                     }
                 });
 
@@ -39,14 +33,8 @@ class Home extends Component {
     componentDidUpdate (pp, ps, ss) {
         if (pp.address !== this.props.address) {
             this.props.fetchProjectsList(this.props.address, (result) => {
-                if (result && result.length) {
-                    result.map((value) => {
-                        if (value && value.nfts && value.nfts.length && value.nfts[0]) {
-                            this.props.fetchNFT(value.nfts[0]);
-                        }
-
-                        return null;
-                    });
+                if (this.props.address && result && result.length && result[0].denom && result[0].denom.id) {
+                    this.props.checkNFTClaimStatus(result[0].denom.id, this.props.address);
                 }
             });
         }
@@ -72,7 +60,7 @@ class Home extends Component {
 
 Home.propTypes = {
     address: PropTypes.string.isRequired,
-    fetchNFT: PropTypes.func.isRequired,
+    checkNFTClaimStatus: PropTypes.func.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
     inProgress: PropTypes.bool.isRequired,
     lang: PropTypes.string.isRequired,
@@ -92,7 +80,7 @@ const stateToProps = (state) => {
 };
 
 const actionToProps = {
-    fetchNFT,
+    checkNFTClaimStatus,
     fetchProjectsList,
     showMessage,
 };

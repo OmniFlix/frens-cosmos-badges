@@ -17,8 +17,13 @@ const Section1 = () => {
                     <p>1</p>
                 </div>
                 <div className="details">
-                    <h2 title="Frens Cheesecake (🍰,🤝)">Frens Cheesecake <span aria-label="cheesecake" role="img">(🍰,🤝)</span></h2>
-                    <p title="Thank you for staking with us 🤝">Thank you for staking with us <span aria-label="staking" role="img">🤝</span></p>
+                    <h2 title="Frens Cheesecake (🍰,🤝)">Frens Cheesecake <span
+                        aria-label="cheesecake"
+                        role="img">(🍰,🤝)</span></h2>
+                    <p title="Thank you for staking with us 🤝">Thank you for staking with us <span
+                        aria-label="staking"
+                        role="img">🤝</span>
+                    </p>
                 </div>
             </div>
             <div className="card">
@@ -32,7 +37,9 @@ const Section1 = () => {
                     <p>3</p>
                 </div>
                 <div className="details">
-                    <h2 title="Bear Market Frens (🧸,🤝)">Bear Market Frens <span aria-label="Bear" role="img">(🧸,🤝)</span></h2>
+                    <h2 title="Bear Market Frens (🧸,🤝)">Bear Market Frens <span
+                        aria-label="Bear"
+                        role="img">(🧸,🤝)</span></h2>
                     <p title="We are all bear market frens">We are all bear market frens</p>
                 </div>
             </div>
