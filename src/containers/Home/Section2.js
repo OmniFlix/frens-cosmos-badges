@@ -8,14 +8,14 @@ import { ReactComponent as HandIcon } from '../../assets/hand.svg';
 import { showMessage } from '../../actions/snackbar';
 
 const Section2 = (props) => {
-    const handleShow = () => {
-        if (!props.address) {
-            props.showMessage('Connect Account');
+    const handleShow = (value) => {
+        // if (!props.address) {
+        //     props.showMessage('Connect Account');
+        //
+        //     return;
+        // }
 
-            return;
-        }
-
-        props.showTradeDialog();
+        props.showTradeDialog(value);
     };
 
     const list = props.list && props.list.length > 2
@@ -25,13 +25,16 @@ const Section2 = (props) => {
         <div className="cards_section section2">
             {list && list.length
                 ? list.map((val, index) => {
+                    const preview = val.nft_meta && val.nft_meta.preview_uri;
                     return (
                         <div key={index} className="card">
                             <div className="img_section">
-                                <HandIcon/>
+                                    <img
+                                        alt=""
+                                        src={preview}/>
                             </div>
                             <div className="details actions">
-                                <Button className="claim" onClick={handleShow}>
+                                <Button className="claim" onClick={() => handleShow(val)}>
                                     {variables[props.lang].claim}
                                 </Button>
                                 <Button disabled className="purchase">

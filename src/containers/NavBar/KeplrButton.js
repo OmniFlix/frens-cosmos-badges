@@ -15,6 +15,7 @@ class KeplrButton extends Component {
 
     initKeplr () {
         this.props.initializeChain((address) => {
+            console.log('askjhaksjdasd', address)
             localStorage.setItem('frens_cosmos_badges_address', address && address.length && address[0] && address[0].address);
         });
     }

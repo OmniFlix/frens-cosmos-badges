@@ -1,8 +1,9 @@
 import { TRADE_DIALOG_HIDE, TRADE_DIALOG_SHOW } from '../constants/home';
 
-export const showTradeDialog = () => {
+export const showTradeDialog = (data) => {
     return {
         type: TRADE_DIALOG_SHOW,
+        data,
     };
 };
 

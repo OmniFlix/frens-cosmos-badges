@@ -18,6 +18,13 @@
 
 .trade_dialog .trade_content .left_section {
     width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trade_dialog .trade_content .left_section > img {
+    width: inherit;
 }
 
 .trade_dialog .trade_content .right_section {

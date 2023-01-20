@@ -8,6 +8,8 @@ import variables from '../../utils/variables';
 import Icon from '../../components/Icon';
 
 const TradeDialog = (props) => {
+    console.log('asdasbdjasdds', props.data)
+    const preview = props.data && props.data.nft_meta && props.data.nft_meta.preview_uri;
     return (
         <Dialog
             aria-describedby="preview-dialog-description"
@@ -16,30 +18,34 @@ const TradeDialog = (props) => {
             open={props.open}
             onClose={props.handleClose}>
             <div className="trade_content">
-                <div className="left_section"></div>
+                <div className="left_section">
+                    <img
+                        alt=""
+                        src={preview}/>
+                </div>
                 <div className="right_section">
                     <Button className="cross_button" onClick={props.handleClose}>
                         <Icon className="cross" icon="cross"/>
                     </Button>
                     <h2>
-                        bear market
+                        {props.data && props.data.nft_meta && props.data.nft_meta.name}
                     </h2>
                     <p>
-                        We are five full-time Cosmonauts with technical backgrounds.
+                        {props.data && props.data.nft_meta && props.data.nft_meta.description}
                     </p>
-                    <div>
-                        <Button>
-                            {variables[props.lang].category}
-                        </Button>
-                        <Button>
-                            {variables[props.lang].category}
-                        </Button>
-                    </div>
-                    <div className="content">
-                        View on chainexplorer
-                    </div>
+                    {/*<div>*/}
+                    {/*    <Button>*/}
+                    {/*        {variables[props.lang].category}*/}
+                    {/*    </Button>*/}
+                    {/*    <Button>*/}
+                    {/*        {variables[props.lang].category}*/}
+                    {/*    </Button>*/}
+                    {/*</div>*/}
+                    {/*<div className="content">*/}
+                    {/*    View on chainexplorer*/}
+                    {/*</div>*/}
                     <Button className="trade_button">
-                        {variables[props.lang].trade}
+                        {variables[props.lang].claim}
                     </Button>
                 </div>
             </div>
@@ -48,6 +54,7 @@ const TradeDialog = (props) => {
 };
 
 TradeDialog.propTypes = {
+    data: PropTypes.object.isRequired,
     handleClose: PropTypes.func.isRequired,
     lang: PropTypes.string.isRequired,
     open: PropTypes.bool.isRequired,
@@ -56,6 +63,7 @@ TradeDialog.propTypes = {
 const stateToProps = (state) => {
     return {
         open: state.home.tradeDialog.open,
+        data: state.home.tradeDialog.data,
         lang: state.language,
     };
 };
