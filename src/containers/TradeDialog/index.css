@@ -17,7 +17,15 @@
 }
 
 .trade_dialog .trade_content .left_section {
-    width: 55%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.trade_dialog .trade_content .left_section > img {
+    width: 100%;
 }
 
 .trade_dialog .trade_content .right_section {
@@ -30,6 +38,7 @@
     background: unset;
     position: absolute;
     right: 0;
+    top: 30px;
 }
 
 .trade_dialog .trade_content .right_section .cross_button svg {
@@ -44,6 +53,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 44px;
     margin-bottom: 0;
+    font-weight: 900;
 }
 
 .trade_dialog .trade_content .right_section > p {

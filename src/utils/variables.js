@@ -12,6 +12,7 @@ const variables = {
         dummy_content: 'We are five full-time Cosmonauts with technical backgrounds.',
         category: 'category',
         trade: 'trade',
+        processing: 'Processing',
     },
 };
 
