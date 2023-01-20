@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button } from '@mui/material';
 import variables from '../../utils/variables';
 import * as PropTypes from 'prop-types';
@@ -6,21 +6,31 @@ import { connect } from 'react-redux';
 import { aminoSignTx, initializeChain } from '../../actions/account/wallet';
 import withRouter from '../../components/WithRouter';
 
-const KeplrButton = (props) => {
-    const initKeplr = () => {
-        props.initializeChain();
-    };
+class KeplrButton extends Component {
+    componentDidMount () {
+        if (localStorage.getItem('frens_cosmos_badges_address')) {
+            this.initKeplr();
+        }
+    }
 
-    return (
-        <div className="keplr_button">
-            {props.address
-                ? props.address
-                : <Button onClick={initKeplr}>
-                    {variables[props.lang].connect}
-                </Button>}
-        </div>
-    );
-};
+    initKeplr () {
+        this.props.initializeChain((address) => {
+            localStorage.setItem('frens_cosmos_badges_address', address && address.length && address[0] && address[0].address);
+        });
+    }
+
+    render () {
+        return (
+            <div className="keplr_button">
+                {this.props.address
+                    ? this.props.address
+                    : <Button onClick={this.initKeplr}>
+                        {variables[this.props.lang].connect}
+                    </Button>}
+            </div>
+        );
+    }
+}
 
 KeplrButton.propTypes = {
     address: PropTypes.string.isRequired,

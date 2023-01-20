@@ -30,6 +30,7 @@
     background: unset;
     position: absolute;
     right: 0;
+    top: 30px;
 }
 
 .trade_dialog .trade_content .right_section .cross_button svg {
@@ -44,6 +45,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 44px;
     margin-bottom: 0;
+    font-weight: 900;
 }
 
 .trade_dialog .trade_content .right_section > p {

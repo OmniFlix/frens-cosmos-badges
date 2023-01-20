@@ -187,7 +187,6 @@ export const txSignAndBroadCast = (data, cb) => (dispatch) => {
     Axios.post(url, data, {
         headers: {
             Accept: 'application/json, text/plain, */*',
-            Connection: 'keep-alive',
         },
     })
         .then((res) => {
@@ -238,7 +237,6 @@ export const fetchTxHash = (hash, cb) => (dispatch) => {
     Axios.get(url, {
         headers: {
             Accept: 'application/json, text/plain, */*',
-            Connection: 'keep-alive',
         },
     })
         .then((res) => {
