@@ -42,9 +42,9 @@
 
 .home .cards > svg {
     position: absolute;
-    height: 135%;
-    right: -440px;
-    top: -200px;
+    height: 145%;
+    right: -500px;
+    top: -280px;
 }
 
 .home .section1 {
@@ -213,6 +213,7 @@
     color: #1E1E1E;
     opacity: 1;
     margin: 0;
+    z-index: 99;
 }
 
 .home .future_group > p {
@@ -332,6 +333,10 @@
         padding: 20px;
     }
 
+    .home .cards > svg {
+        top: -240px;
+    }
+
     .home .header > h2 {
         max-width: unset;
         font-size: 40px;
@@ -375,6 +380,14 @@
 
     .home .cards_section .card:last-child {
         margin-left: 20px;
+    }
+
+    .home .header {
+        width: 50%;
+    }
+
+    .home .cards > svg {
+        top: -260px;
     }
 }
 
